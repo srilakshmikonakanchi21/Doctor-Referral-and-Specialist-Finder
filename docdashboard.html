@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        <h1>Doctor's Dashboard</h1>
+        
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h2>Welcome, DoctorName</h2>
+        </div>
+
+        <!-- Buttons for actions -->
+        <div class="actions">
+            <button id="updateTimingsBtn">Update Available Timings</button>
+            <button id="viewPatientsBtn">View Registered Patients</button>
+        </div>
+
+        <!-- Timings Update Section -->
+        <div id="timingsSection" class="hidden">
+            <h3>Update Available Timings</h3>
+            <form id="timingForm">
+                <label for="morningShift">Morning Shift:</label>
+                <input type="time" id="morningShift" name="morningShift"><br><br>
+
+                <label for="afternoonShift">Afternoon Shift:</label>
+                <input type="time" id="afternoonShift" name="afternoonShift"><br><br>
+
+                <label for="eveningShift">Evening Shift:</label>
+                <input type="time" id="eveningShift" name="eveningShift"><br><br>
+
+                <button type="submit">Update Timings</button>
+            </form>
+        </div>
+
+        <!-- Patients View Section -->
+        <div id="patientsSection" class="hidden">
+            <h3>Registered Patients</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Problem</th>
+                        <th>Appointment Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>45</td>
+                        <td>Male</td>
+                        <td>Fever</td>
+                        <td>2024-10-15</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>32</td>
+                        <td>Female</td>
+                        <td>Cough</td>
+                        <td>2024-10-16</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>

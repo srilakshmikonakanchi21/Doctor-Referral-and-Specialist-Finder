@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Hospital Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: blueviolet;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .logout-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            background-color: white;
+            color: blueviolet;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .logout-btn:hover {
+            background-color: blueviolet;
+            color: white;
+        }
+        .admin-details {
+            text-align: center;
+            margin: 20px;
+        }
+        .admin-details p {
+            font-size: 18px;
+            margin: 5px;
+        }
+        .dashboard-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px;
+        }
+        .dashboard-item {
+            background-color: white;
+            width: 200px;
+            height: 150px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            cursor: pointer;
+        }
+        .dashboard-item:hover {
+            background-color: blueviolet;
+            color: white;
+        }
+        .dashboard-item h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .dashboard-item p {
+            font-size: 14px;
+            color: gray;
+        }
+        #current-time {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1> Dashboard - Hospital Management</h1>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+
+<div class="dashboard-container">
+    <div class="dashboard-item" onclick="goToSection('patients')">
+        <h2>Manage Patients</h2>
+        <p>View, add, and update patient records</p>
+    </div>
+    <div class="dashboard-item" onclick="goToSection('doctors')">
+        <h2>Manage Doctors</h2>
+        <p>View, add, and update doctor details</p>
+    </div>
+    <div class="dashboard-item" onclick="goToSection('appointments')">
+        <h2>Appointments</h2>
+        <p>Manage hospital appointments</p>
+    </div>
+    <div class="dashboard-item" onclick="goToSection('billing')">
+        <h2>Billing</h2>
+        <p>View and generate billing reports</p>
+    </div>
+    
+</div>
+
+<script>
+    // Function to display current time
+    function updateTime() {
+        var currentTime = new Date();
+        document.getElementById("current-time").innerText = "Current Time: " + currentTime.toLocaleString();
+    }
+    setInterval(updateTime, 1000); // Update time every second
+
+    // Set admin details (these values can be passed from the login page)
+    const adminDetails = {
+        name: "Admin User", // Replace with dynamic data if needed
+        email: "admin@example.com", // Replace with dynamic data
+        loginTime: new Date().toLocaleString() // Capture login time
+    };
+
+    document.getElementById("admin-name").innerText = adminDetails.name;
+    document.getElementById("admin-email").innerText = adminDetails.email;
+    document.getElementById("login-time").innerText = adminDetails.loginTime;
+
+    // Simulate redirection to different sections
+    function goToSection(section) {
+        alert(Redirecting to ${section} management page...);
+        // Replace this with actual redirection, like:
+        // window.location.href = ${section}_management.html;
+    }
+
+    // Logout function
+    function logout() {
+        if (confirm("Are you sure you want to log out?")) {
+            window.location.href = "admin_login.html"; // Redirect to login page
+        }
+    }
+</script>
+
+</body>
+</html>
